@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "fps-fix",
+	"version": "${version}",
+	"name": "FPS Fix",
+	"description": "Lets you change your max fps to up to 600",
+	"authors": [
+		"Diamondgoobird"
+	],
+	"contact": {
+		"homepage": "https://github.com/Diamondgoobird",
+		"sources": "https://github.com/Diamondgoobird/fpsFix"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fps-fix/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.diamondgoobird.FPSFixClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "fps-fix.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
