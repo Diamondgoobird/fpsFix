@@ -17,7 +17,9 @@ public class FPSFixClient implements ClientModInitializer {
 							literal("fps").then(
 									argument("fps", IntegerArgumentType.integer()).executes(
 											context -> {
-												MinecraftClient.getInstance().options.getMaxFps().setValue(IntegerArgumentType.getInteger(context, "fps"));
+												int fps = IntegerArgumentType.getInteger(context, "fps");
+												MinecraftClient.getInstance().options.getMaxFps().setValue(fps);
+												MinecraftClient.getInstance().getWindow().setFramerateLimit(fps);
 												return 0;
 											}
 									)
